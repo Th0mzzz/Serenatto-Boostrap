@@ -2,13 +2,12 @@ body {
   --bege: #E6E0D6;
   --marrom-escuro: #816D4F;
   --marrom-claro: #B29463;
-  --f-family: 'Barlow' , "arial";
-    font-family: --f-family;
-overflow-x: hidden;
+    overflow-x: hidden;
 }
 html{
   width: 100vw;
   height: 100vh;
+  font-family: 'Inter' , sans-serif;
 }
 input[type=checkbox] {
   border: 2px solid var(--marrom-claro);
@@ -44,10 +43,24 @@ input[type="checkbox"]:focus {
   background-image: url(assets/banner-3.png);
     background-size: cover;
     background-position: center;
-
 }
 
 
 .banners-titulo{
   --bs-bg-opacity:.5;
+}
+
+.botao-padrao{
+  background: var(--marrom-claro);
+  border: none;
+}
+.botao-padrao:hover{
+  background: var(--marrom-escuro);
+  color: var(--bege);
+}
+.img-card{
+  transition: transform ease .5s;
+}
+.img-card:hover{
+    transform: scale(1.2);
 }
