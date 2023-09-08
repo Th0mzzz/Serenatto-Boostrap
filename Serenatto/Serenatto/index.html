@@ -8,18 +8,21 @@
   <link rel="shortcut icon" href="./" type="image/x-icon">
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
   <title>Serenatto</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <!-- CSS -->
+    <link rel="stylesheet" href="./estilos.css">
+  <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./estilos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
+<body data-bs-theme="light">
 
   <header>
 
@@ -46,13 +49,13 @@
                 <a class="nav-link" href="#">Sobre</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contato</a>
+                <a class="nav-link" href="#contato">Contato</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Modo Noturno</label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="mode_btn">
+                    <label class="form-check-label" for="mode_btn">Modo Noturno</label>
                   </div>
                 </a>
               </li>
@@ -82,36 +85,36 @@
         <div class="card m-4 overflow-hidden" style="width: 20rem;">
           <img src="./assets/cafe-card.png" class="card-img-top img-card"
             alt="Balcão de padaria tradicional com alimentos diversos" data-bs-toggle="offcanvas" data-bs-target="#canvas-1" >
-          <div class="card-body bg-light z-2">
+          <div class="card-body bg-body z-2 d-flex flex-column">
             <h5 class="card-title py-2 fw-bold">Café & Bistrô</h5>
             <p class="card-text">Nosso bistrô oferece uma ampla variedade de cafés, smoothies, deliciosos
               salgados e sobremesas. Uma excelente opção para quem busca um lugar tranquilo e
               aconchegante.</p>
-            <a href="#" class="btn botao-padrao w-100 fw-bold" data-bs-toggle="offcanvas" data-bs-target="#canvas-1"
+            <a href="#" class="btn botao-padrao w-100 fw-bold py-3 mt-auto" data-bs-toggle="offcanvas" data-bs-target="#canvas-1"
               aria-controls="offcanvasRight">Quero detalhes</a>
           </div>
         </div>
 
         <div class="card m-4 overflow-hidden" style="width: 20rem;">
           <img src="./assets/buffet-card.png" class="card-img-top img-card" alt="Mesa de buffet com alimentos diversos" data-bs-toggle="offcanvas" data-bs-target="#canvas-2">
-          <div class="card-body bg-light z-2">
+          <div class="card-body bg-body z-2 d-flex flex-column">
             <h5 class="card-title fw-bold">Buffet</h5>
             <p class="card-text">Buffet e catering personalizado para eventos, produções e celebrações. Com
               um menu variado e adaptável às preferências do cliente, atendimento atencioso e
               profissional.</p>
-            <a href="#" class="btn botao-padrao w-100 fw-bold" data-bs-toggle="offcanvas" data-bs-target="#canvas-2"
+            <a href="#" class="btn botao-padrao w-100 fw-bold py-3 mt-auto" data-bs-toggle="offcanvas" data-bs-target="#canvas-2"
               aria-controls="offcanvasRight">Quero detalhes</a>
           </div>
         </div>
 
         <div class="card m-4 overflow-hidden" style="width: 20rem;">
           <img src="./assets/delivery-card.png" class="card-img-top img-card" alt="Caixa aberta armazenando comidas diversas" data-bs-toggle="offcanvas" data-bs-target="#canvas-3">
-          <div class="card-body bg-light z-2">
+          <div class="card-body bg-body z-2 d-flex flex-column">
             <h5 class="card-title fw-bold">Delivery</h5>
             <p class="card-text">Para quem deseja desfrutar no conforto de casa, oferecemos delivery dos
               produtos. Com o mesmo cardápio variado de sempre, sem perder nosso sabor e padrão de
               qualidade.</p>
-            <a href="#" class="btn botao-padrao w-100 fw-bold" data-bs-toggle="offcanvas" data-bs-target="#canvas-3"
+            <a href="#" class="btn botao-padrao w-100 fw-bold py-3 mt-auto" data-bs-toggle="offcanvas" data-bs-target="#canvas-3"
               aria-controls="offcanvasRight">Quero detalhes</a>
           </div>
         </div>
@@ -200,7 +203,63 @@
     </section>
 
 
+    <section class="py-4 container">
+      <div class="row">
+          <div class="border border-2 rounded p-5 col-10 col-xl-8 m-auto">
+
+              <h3 class="fw-bold py-3">Entre em contato</h3>
+              
+              <form id="contato" class="w-100">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="input-nome" placeholder="Nome completo">
+                  <label for="input-nome">Nome completo</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="input-email" placeholder="Email">
+                  <label for="input-email">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="tel" class="form-control" id="input-telefone" placeholder="Telefone">
+                  <label for="input-telefone">Telefone</label>
+                </div>
+
+                <select class="form-select mb-5" aria-label="Preferência de contato">
+                  <option selected>Preferência de contato</option>
+                  <option value="1">Whatsapp</option>
+                  <option value="2">Email</option>
+                  <option value="3">Ligação</option>
+                </select>
+                <label for="satis-nvl" class="form-label ">Nível de satisfação</label>
+                <input type="range" class="form-range border-dark" min="0" max="5" id="satis-nvl">
+                
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="novidades">
+                  <label class="form-check-label" for="novidades">
+                    Deseja receber as novidades por email?
+                  </label>
+                </div>
+                <button type="button" class="btn botao-padrao w-100 mt-3 p-3 fw-bold">Enviar</button>
+
+              </form>
+            
+          </div>
+      </div>
+    </section>
+
+
+
   </main>
+
+  <footer class="container-fluid text-center">
+        <section class="container p-4 pb-0">
+          <a href="" class="btn"><i class="bi bi-github fs-5"></i></a>
+          <a href="" class="btn"><i class="bi bi-envelope fs-5"></i></a>
+          <a href="" class="btn"><i class="bi bi-linkedin fs-5"></i></a>
+          <p class="py-3">2023 &COPY; Desenvolvido por Th0mzzz | Projetos sem fins comerciais</p>
+        </section>
+        
+        
+  </footer>
 
 
   <!-- Canvas - Café&Bistro -->
@@ -502,6 +561,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
     crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 
 </body>
 
